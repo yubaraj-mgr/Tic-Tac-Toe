@@ -2,28 +2,28 @@ const box = document.querySelectorAll(".wrapper>div");
 const h1 = document.querySelector("h1");
 
 const boxArray = Array.from(box);
-
-//Winning logic in Tic Tac Toe
-//[123, 456, 789, 147, 258, 369, 159, 357]
-
 let count = 0;
-boxArray.forEach((eachBoxArray) => {
-  eachBoxArray.addEventListener("click", () => {
-    count++;
+let winner = "";
 
+boxArray.map((eachBox) => {
+  eachBox.addEventListener("click", () => {
+    count++;
     if (count <= 9) {
       if (count % 2 == 0) {
-        eachBoxArray.innerHTML = 0;
+        eachBox.innerHTML = "0";
       } else {
-        eachBoxArray.innerHTML = "X";
+        eachBox.innerHTML = "X";
       }
-      if (checkWin()) {
-        h1.innerText = "Winner";
-        reset();
-      }
-    } else {
+    }
+    winner += eachBox.innerHTML;
+    if (winner.length == 9) {
       h1.innerText = "DRAW";
       reset();
+      count = 0;
+    }
+
+    if (checkWin()) {
+      h1.innerText = `${winner.slice(winner.length - 1)} WINS`;
     }
   });
 });
@@ -31,36 +31,33 @@ boxArray.forEach((eachBoxArray) => {
 const reset = () => {
   for (let i = 0; i < boxArray.length; i++) {
     boxArray[i].innerHTML = "";
-    count = 0;
   }
 };
 
-const getData = (div) => {
-  return document.querySelector(div).innerText;
+const getData = (num) => {
+  return boxArray[num].innerHTML;
+};
+
+const checkCondition = (num0, num1, num2) => {
+  return (
+    getData(num0) != "" &&
+    getData(num1) != "" &&
+    getData(num2) != "" &&
+    getData(num0) == getData(num1) &&
+    getData(num1) == getData(num2)
+  );
 };
 
 const checkWin = () => {
   if (
-    checkCondition(".one", ".two", ".three") ||
-    checkCondition(".four", ".five", ".six") ||
-    checkCondition(".seven", ".eight", ".nine") ||
-    checkCondition(".one", ".four", ".seven") ||
-    checkCondition(".two", ".five", ".eight") ||
-    checkCondition(".three", ".six", ".nine") ||
-    checkCondition(".one", ".five", ".nine") ||
-    checkCondition(".three", ".five", ".seven")
-  ) {
-    return true;
-  }
-};
-
-const checkCondition = (div1, div2, div3) => {
-  if (
-    getData(div1) != "" &&
-    getData(div2) != "" &&
-    getData(div3) != "" &&
-    getData(div1) == getData(div2) &&
-    getData(div2) == getData(div3)
+    checkCondition(0, 1, 2) ||
+    checkCondition(3, 4, 5) ||
+    checkCondition(6, 7, 8) ||
+    checkCondition(0, 3, 6) ||
+    checkCondition(1, 4, 7) ||
+    checkCondition(2, 5, 8) ||
+    checkCondition(0, 4, 8) ||
+    checkCondition(2, 4, 6)
   ) {
     return true;
   }
