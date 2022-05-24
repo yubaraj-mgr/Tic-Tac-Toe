@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  border: 3px solid red;
+  column-gap: 2px;
+  width: fit-content;
+}
+
+.wrapper > div {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  border: 2px solid rgb(47, 162, 207);
+  font-size: 5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one {
+  /* position: relative;
+  left: 130px;
+  top: 150px; */
+}
+
+.four {
+  /* position: relative;
+  left: 130px; */
+}
+
+.seven {
+  /* position: relative;
+  left: 130px;
+  bottom: 150px; */
+}
+
+.three {
+  /* position: relative;
+  right: 132px;
+  top: 150px; */
+}
+
+.six {
+  /* position: relative;
+  right: 132px; */
+}
+
+.nine {
+  /* position: relative;
+  right: 132px;
+  bottom: 150px; */
+}
+
+.two {
+  /* position: relative;
+  top: 150px; */
+}
+
+.eight {
+  /* position: relative;
+  bottom: 150px; */
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: greenyellow;
+  position: relative;
+  bottom: 50px;
+}
