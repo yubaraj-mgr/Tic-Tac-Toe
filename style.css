@@ -2,13 +2,28 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background: black;
+  font-family: "Odibee Sans", cursive;
+}
 
 .main {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 3px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    rgb(2, 176, 245),
+    rgba(245, 6, 245, 0.972)
+  );
+  border-image-slice: 1;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: 70px;
 }
 
 .wrapper {
@@ -21,10 +36,8 @@
 }
 
 .wrapper > div {
-  background-color: black;
   height: 100px;
   width: 100px;
-  border: 2px solid rgb(47, 162, 207);
   font-size: 5rem;
   color: white;
   display: flex;
@@ -32,10 +45,62 @@
   align-items: center;
 }
 
-h1 {
-  text-align: center;
-  font-size: 5rem;
-  color: red;
+.wins {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(157, 81, 207);
+  width: 100%;
   position: relative;
-  bottom: 50px;
+  top: -60px;
+}
+
+span {
+  color: rgb(2, 176, 245);
+}
+
+.one {
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+}
+
+.four {
+  border-right: 3px solid white;
+}
+
+.three {
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+}
+
+.six {
+  border-left: 3px solid white;
+}
+
+.nine {
+  border-left: 3px solid white;
+  border-top: 3px solid white;
+}
+
+.two {
+  border-bottom: 3px solid white;
+}
+
+.five {
+}
+
+.eight {
+  border-top: 3px solid white;
+}
+
+.seven {
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+}
+
+.heading {
+  color: rgb(2, 176, 245);
+  text-align: center;
+  position: relative;
+  top: 30px;
+  font-size: 5rem;
 }

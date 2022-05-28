@@ -4,6 +4,9 @@ const h1 = document.querySelector("h1");
 const boxArray = Array.from(box);
 let count = 0;
 let winner = "";
+let xCount = 0;
+let oCount = 0;
+let draw = 0;
 
 boxArray.map((eachBox) => {
   eachBox.addEventListener("click", () => {
@@ -11,19 +14,31 @@ boxArray.map((eachBox) => {
     if (count <= 9) {
       if (count % 2 == 0) {
         eachBox.innerHTML = "0";
+        // randomDiv();
       } else {
         eachBox.innerHTML = "X";
       }
     }
     winner += eachBox.innerHTML;
-    if (winner.length == 9) {
-      h1.innerText = "DRAW";
+
+    if (count == 9) {
+      draw += 1;
+      document.getElementById("d").innerText = draw;
       reset();
       count = 0;
     }
 
     if (checkWin()) {
-      h1.innerText = `${winner.slice(winner.length - 1)} WINS`;
+      const winCount = winner.length;
+      if (winner.charAt(winCount - 1) == "X") {
+        xCount += 1;
+        document.getElementById("x").innerText = xCount;
+      } else if (winner.charAt(winCount - 1) == "0") {
+        oCount += 1;
+        document.getElementById("o").innerText = oCount;
+      }
+      reset();
+      count = 0;
     }
   });
 });
@@ -62,3 +77,7 @@ const checkWin = () => {
     return true;
   }
 };
+
+// const randomDiv = (value) => {
+//   return (boxArray[Math.floor(Math.random() * (9 - 0) + 0)].innerHTML = "O");
+// };
