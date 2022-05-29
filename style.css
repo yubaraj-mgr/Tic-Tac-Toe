@@ -39,7 +39,7 @@ body {
   height: 100px;
   width: 100px;
   font-size: 5rem;
-  color: white;
+  color: rgb(16, 238, 16);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,42 +59,42 @@ span {
 }
 
 .one {
-  border-right: 3px solid white;
-  border-bottom: 3px solid white;
+  border-right: 3px solid rgb(240, 77, 77);
+  border-bottom: 3px solid rgb(240, 77, 77);
 }
 
 .four {
-  border-right: 3px solid white;
+  border-right: 3px solid rgb(240, 77, 77);
 }
 
 .three {
-  border-left: 3px solid white;
-  border-bottom: 3px solid white;
+  border-left: 3px solid rgb(240, 77, 77);
+  border-bottom: 3px solid rgb(240, 77, 77);
 }
 
 .six {
-  border-left: 3px solid white;
+  border-left: 3px solid rgb(240, 77, 77);
 }
 
 .nine {
-  border-left: 3px solid white;
-  border-top: 3px solid white;
+  border-left: 3px solid rgb(240, 77, 77);
+  border-top: 3px solid rgb(240, 77, 77);
 }
 
 .two {
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid rgb(240, 77, 77);
 }
 
 .five {
 }
 
 .eight {
-  border-top: 3px solid white;
+  border-top: 3px solid rgb(240, 77, 77);
 }
 
 .seven {
-  border-top: 3px solid white;
-  border-right: 3px solid white;
+  border-top: 3px solid rgb(240, 77, 77);
+  border-right: 3px solid rgb(240, 77, 77);
 }
 
 .heading {
